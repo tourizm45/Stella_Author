@@ -1,23 +1,31 @@
 const Floral = ({ side = "right", soft = false }) => (
   <svg className={`floral floral-${side} ${soft ? "floral-soft" : ""}`} viewBox="0 0 420 520" aria-hidden="true">
+    <defs>
+      <linearGradient id="leafFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#78906f"/><stop offset="1" stopColor="#48634c"/></linearGradient>
+      <radialGradient id="petalFill" cx="45%" cy="38%" r="70%"><stop offset="0" stopColor="#f4d3c7"/><stop offset=".68" stopColor="#cf9c8d"/><stop offset="1" stopColor="#a87369"/></radialGradient>
+      <radialGradient id="lilacFill" cx="40%" cy="35%" r="70%"><stop offset="0" stopColor="#c6a3ce"/><stop offset="1" stopColor="#7e5c8b"/></radialGradient>
+    </defs>
     <g className="vine">
-      <path d="M54 506C136 419 96 329 183 248C240 194 278 129 291 25" />
+      <path className="main-stem" d="M54 506C136 419 96 329 183 248C240 194 278 129 291 25" />
       <path d="M130 405c-49-11-70-46-65-82 41 2 75 26 86 62" />
       <path d="M159 330c33-41 76-45 105-25-18 41-52 61-93 54" />
       <path d="M210 241c-38-25-44-62-29-91 38 13 60 43 56 79" />
       <path d="M260 151c34-26 70-21 92 1-24 32-56 43-88 28" />
+      <path className="leaf-vein" d="M83 337c28 22 47 35 68 48M183 322c23 8 44 1 68-12M193 170c14 24 25 41 43 58M278 158c20 7 42 5 67-2"/>
     </g>
     <g className="lilacs">
-      <circle cx="109" cy="298" r="17"/><circle cx="89" cy="280" r="15"/><circle cx="118" cy="270" r="14"/><circle cx="97" cy="252" r="12"/>
-      <circle cx="274" cy="133" r="15"/><circle cx="294" cy="116" r="13"/><circle cx="270" cy="105" r="12"/><circle cx="305" cy="93" r="11"/>
+      {[ [109,298,15],[89,280,13],[118,270,12],[97,252,10],[78,260,9],[124,291,9],[274,133,13],[294,116,11],[270,105,10],[305,93,9],[289,140,9],[317,111,8] ].map(([cx,cy,r],i)=><circle key={i} cx={cx} cy={cy} r={r}/>)}
     </g>
     <g className="peony">
       <ellipse cx="188" cy="229" rx="58" ry="39" transform="rotate(-15 188 229)"/>
       <ellipse cx="181" cy="205" rx="44" ry="57" transform="rotate(18 181 205)"/>
       <ellipse cx="219" cy="207" rx="43" ry="54" transform="rotate(47 219 207)"/>
       <ellipse cx="153" cy="214" rx="39" ry="51" transform="rotate(-42 153 214)"/>
+      <ellipse cx="204" cy="190" rx="31" ry="42" transform="rotate(10 204 190)"/>
+      <ellipse cx="163" cy="194" rx="29" ry="40" transform="rotate(-18 163 194)"/>
       <ellipse cx="197" cy="226" rx="34" ry="39"/>
       <ellipse cx="172" cy="226" rx="28" ry="34"/>
+      <ellipse cx="188" cy="213" rx="22" ry="28"/>
     </g>
   </svg>
 );
