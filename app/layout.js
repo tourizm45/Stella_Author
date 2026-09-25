@@ -1,3 +1,3 @@
-import "./globals.css";
-export const metadata={title:"Stella Recchia | Author",description:"Stories about love, life, and the funny parts in between."};
-export default function RootLayout({children}){return <html lang="en"><body>{children}</body></html>}
+import './globals.css';
+export const metadata={title:'Rose Recchia — Author',description:'Author website design explorations for Rose Recchia'};
+export default function Layout({children}){return <html lang="en"><body>{children}</body></html>}
